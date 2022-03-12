@@ -21,43 +21,22 @@ let package = Package(
             dependencies: [],
             path: "Sources/cmark",
             exclude: [
-              "include",
-              "case_fold_switch.inc",
-              "entities.inc",
-              "COPYING"
+                "include",
+                "case_fold_switch.inc",
+                "entities.inc",
+                "COPYING"
             ],
-            publicHeadersPath: "./"
+            publicHeadersPath: "."
         ),
         .target(
             name: "Down",
             dependencies: ["libcmark"],
             path: "Sources/Down",
-            exclude: ["Down.h"],
-          resources: [
-            .copy("Resources/DownView.bundle"),
-            .copy("Resources/DownView (macOS).bundle"),
-          ]
+            exclude: ["Down.h"]
         ),
-        .testTarget(
-            name: "DownTests",
-            dependencies: ["Down"],
-            path: "Tests/DownTests",
-            exclude: [
-                "AST/VisitorTests.swift",
-                "AST/__Snapshots__",
-                "DownViewTests.swift",
-                "Fixtures",
-                "Styler/__Snapshots__",
-                "Styler/BlockQuoteStyleTests.swift",
-                "Styler/CodeBlockStyleTests.swift",
-                "Styler/DownDebugLayoutManagerTests.swift",
-                "Styler/HeadingStyleTests.swift",
-                "Styler/LinkStyleTests.swift",
-                "Styler/InlineStyleTests.swift",
-                "Styler/ListItemStyleTests.swift",
-                "Styler/StylerTestSuite.swift",
-                "Styler/ThematicBreakSyleTests.swift"
-            ]
+        .target(
+            name: "Example",
+            dependencies: ["Down"]
         )
     ],
     swiftLanguageVersions: [.v5]
