@@ -12,7 +12,7 @@ See the example `Package.swift` for how to add `Down-gfm` to your SwiftPM packag
 let package = Package(
     // ...
     dependencies: [
-        .package(path: "https://github.com/stackotter/Down-gfm", from: "0.12.0"),
+        .package(url: "https://github.com/stackotter/Down-gfm", from: "0.12.0"),
     ],
     targets: [
         .executableTarget(
