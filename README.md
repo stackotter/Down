@@ -2,6 +2,28 @@
 
 Down-gfm is a fork of [Down](https://github.com/johnxnguyen/Down) that adds support for GitHub flavored markdown.
 
+### Usage
+
+See the example `Package.swift` for how to add `Down-gfm` to your SwiftPM package:
+
+```swift
+// ...
+
+let package = Package(
+    // ...
+    dependencies: [
+        .package(path: "https://github.com/stackotter/Down-gfm"),
+    ],
+    targets: [
+        .executableTarget(
+            // ...
+            dependencies: [.product(name: "Down", package: "Down-gfm")],
+            // ...
+        )
+    ]
+)
+```
+
 ### Example
 
 To run the example program, run the following commands:
