@@ -20,3 +20,5 @@ DerivedData
 *.ipa
 *.xcuserstate
 /.vscode
+/.xcodeproj
+/.swiftpm
