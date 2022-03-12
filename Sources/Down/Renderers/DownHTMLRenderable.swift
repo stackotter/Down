@@ -51,7 +51,9 @@ public struct DownHTMLRenderer {
     ///     `ASTRenderingError` if the AST could not be converted.
 
     public static func astToHTML(_ ast: CMarkNode, options: DownOptions = .default) throws -> String {
-        guard let cHTMLString = cmark_render_html(ast, options.rawValue) else {
+        var emptyList = cmark_llist()
+        
+        guard let cHTMLString = cmark_render_html(&ast.pointee, options.rawValue, &emptyList) else {
             throw DownErrors.astRenderingError
         }
 
