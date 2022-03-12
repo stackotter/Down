@@ -1,3 +1,39 @@
+## Down-gfm
+
+Down-gfm is a fork of [Down](https://github.com/johnxnguyen/Down) that adds support for GitHub flavored markdown.
+
+### Example
+
+To run the example program, run the following commands:
+
+```sh
+git clone https://github.com/stackotter/Down-gfm
+cd Down-gfm
+swift run Example
+```
+
+### Maintaining
+
+One of the main goals of this fork was to make it as easy as possible to stay up-to-date with the latest `cmark-gfm` version (`Down` itself seems to have been abandoned, so when making this fork I didn't worry too much about making it easy to keep up-to-date with the latest `Down` changes).
+
+To accomplish this goal, I created [a script for changing the cmark-gfm version](https://github.com/stackotter/Down/blob/master/update_gfm.sh).
+
+To update to the latest commit of `cmark-gfm` run the following command:
+
+```sh
+./update_gfm.sh
+```
+
+To update to a specific commit of `cmark-gfm` run the following command (where `[commit]` is the commit hash):
+
+```sh
+./update_gfm.sh [commit]
+```
+
+The original [Down readme](https://github.com/johnxnguyen/Down/blob/master/README.md) is included below.
+
+---
+
 ## Down
 [![Build Status](https://travis-ci.com/johnxnguyen/Down.svg?branch=master)](https://travis-ci.com/johnxnguyen/Down)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/johnxnguyen/Down/blob/master/LICENSE)
